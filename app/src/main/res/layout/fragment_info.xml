@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,7 +10,7 @@
     android:gravity="center_horizontal">
 
     <TextView
-        android:id="@+id/question"
+        android:id="@+id/Titre"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="0.4"
@@ -19,11 +20,10 @@
         android:textSize="45sp"
         android:textColor="@color/black"
         android:background="#FFFFFF"
-
         tools:text="Informations" />
 
     <TextView
-        android:id="@+id/answer1"
+        android:id="@+id/What"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -32,10 +32,9 @@
         android:paddingHorizontal="1dp"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:background="#F5B049"
+        android:background="@color/orange"
         android:gravity="center"
-        tools:text="Que fait cette application ?
-Afin de fournir un état des lieux de la sécurité mise en place sur votre Android, cette application va effectuer différents scans fournissant à vous, utilisateur, un aperçus des vulnérabilités système de votre téléphone." />
+        tools:text="@string/What" />
 
 
     <TextView
@@ -48,10 +47,9 @@ Afin de fournir un état des lieux de la sécurité mise en place sur votre Andr
         android:paddingHorizontal="1dp"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:background="#F5B049"
+        android:background="@color/orange"
         android:gravity="center"
-        tools:text="Pourquoi cette application ?
-En 2021, plus d'un milliard de smartphones Android ont été expédiés à travers le monde [source : servicesmobiles.fr]. Afin que chacun puisse avoir une idée du niveau de sécurité sur son Android, il est intéressant d'avoir une application renseignant toutes ces informations au même endroit. " />
+        tools:text="@string/Why" />
 
     <TextView
         android:id="@+id/answer4"
@@ -63,10 +61,8 @@ En 2021, plus d'un milliard de smartphones Android ont été expédiés à trave
         android:paddingHorizontal="1dp"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:background="#F5B049"
+        android:background="@color/orange"
         android:gravity="center"
-        tools:text="Nous sommes 2 étudiants à l'école ESIEA. Cette application est une partie de notre projet de fin d'étude. L'idée de ce projet est de fournir un état de l'art de la sécurité sur Android, ainsi que de fournir des solutions permettant de durcir au maximum des Androids dégooglisés, opensources, et de maniere portable." />
-
-
+        tools:text="@string/Who" />
 
 </LinearLayout>
