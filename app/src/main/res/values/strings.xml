@@ -2,4 +2,8 @@
     <string name="app_name">FantomeApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_version">Application version : </string>
+    <string name="nomapplication">FANTOME</string>
+    <string name="button_lancer">Lancer l'analyse</string>
+    <string name="tips_demo">Tips démonstration _ a voir par la suite</string>
 </resources>
