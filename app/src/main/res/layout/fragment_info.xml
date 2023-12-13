@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -18,9 +19,8 @@
         android:paddingVertical="1dp"
         android:paddingHorizontal="1dp"
         android:textSize="45sp"
-        android:textColor="@color/black"
-        android:background="#FFFFFF"
-        tools:text="Informations" />
+        android:background="@color/white"
+        android:text="Informations" />
 
     <TextView
         android:id="@+id/What"
@@ -34,7 +34,7 @@
         android:textColor="@color/black"
         android:background="@color/orange"
         android:gravity="center"
-        tools:text="@string/What" />
+        android:text="@string/What" />
 
 
     <TextView
@@ -49,7 +49,7 @@
         android:textColor="@color/black"
         android:background="@color/orange"
         android:gravity="center"
-        tools:text="@string/Why" />
+        android:text="@string/Why" />
 
     <TextView
         android:id="@+id/answer4"
@@ -63,6 +63,6 @@
         android:textColor="@color/black"
         android:background="@color/orange"
         android:gravity="center"
-        tools:text="@string/Who" />
+        android:text="@string/Who" />
 
 </LinearLayout>

@@ -48,6 +48,18 @@ public class MainPage extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view,savedInstanceState);
+        binding.buttonLancer.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // The user just clicked
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                ResAna resarena = ResAna.newInstance();
+                fragmentTransaction.add(R.id.fragment_container_view, resarena);
+                fragmentTransaction.commit();
+            }
+        });
+
         binding.imageButtonInfo.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -60,16 +72,6 @@ public class MainPage extends Fragment {
             }
         });
 
-        binding.buttonLancer.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                // The user just clicked
-                FragmentManager fragmentManager = getParentFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                ResAna infoFragment = ResAna.newInstance();
-                fragmentTransaction.add(R.id.fragment_container_view, infoFragment);
-                fragmentTransaction.commit();
-            }
-        });
+
     }
 }
