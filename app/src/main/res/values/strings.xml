@@ -4,6 +4,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="app_version">Application version : </string>
     <string name="nomapplication">FANTOME</string>
-    <string name="button_lancer">Lancer l'analyse</string>
+    <string name="button_lancer">Lancer l analyse</string>
     <string name="tips_demo">Tips démonstration _ a voir par la suite</string>
+    <string name="resanalyse">Résultats analyse</string>
+    <string name="android_version">Android version : </string>
+    <string name="kernel_version">Kernel version : </string>
+    <string name="information_androbso">Votre téléphone a besoin d’être mis a jour ou est trop vieux opur recevoir les nouvelles</string>
+    <string name="res_tmp1">Resultat analyse X</string>
 </resources>
