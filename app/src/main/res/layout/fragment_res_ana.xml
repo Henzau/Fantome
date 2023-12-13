@@ -1,14 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ResAna">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="@string/resanalyse"
+        android:layout_marginTop="20dp"
+        android:paddingVertical="1dp"
+        android:paddingHorizontal="1dp"
+        android:gravity="center"
+        android:textSize="45sp"
+        android:textColor="@color/black"
+        android:background="#FFFFFF"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/android_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@color/orange"
+        android:gravity="center"
+        android:text="@string/android_version" />
+
+    <TextView
+        android:id="@+id/kernel_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@color/orange"
+        android:gravity="center"
+        android:text="@string/kernel_version" />
+
+    <TextView
+        android:id="@+id/information_androbso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@color/orange"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="@string/information_androbso" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/res_tmp1" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/res_tmp1" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/res_tmp1" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
