@@ -47,8 +47,18 @@ public class analyse {
         }
     }
 
+    //est ce que le téléphone est en mode développeur ?
      public static boolean isDevMode(ContentResolver contentResolver) {
         if (Settings.Global.getInt(contentResolver, Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //est ce que adb est activé ?
+    public static boolean isADB(ContentResolver contentResolver) {
+        if (Settings.Global.getInt(contentResolver, Settings.Global.ADB_ENABLED, 0) != 0) {
             return true;
         } else {
             return false;

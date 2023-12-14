@@ -1,5 +1,6 @@
 package com.example.fantomeapp;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -46,8 +47,20 @@ public class ResAna extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         binding.androidVersion.setText("Android version : "+ analyse.currentVersion() +"\n");
         binding.kernelVersion.setText("Kernel version : "+analyse.readKernelVersion() +"\n");
+
+        if(Double.parseDouble(Build.VERSION.RELEASE.replaceAll("(\\d+[.]\\d+)(.*)","$1")) < 10) {
+            binding.informationAndrobso.setText(getResources().getString(R.string.Hardening_to10));
+        } else if ((Double.parseDouble(Build.VERSION.RELEASE.replaceAll("(\\d+[.]\\d+)(.*)","$1")) >= 10) && ((Double.parseDouble(Build.VERSION.RELEASE.replaceAll("(\\d+[.]\\d+)(.*)","$1")) < 14))) {
+            binding.informationAndrobso.setText(getResources().getString(R.string.Hardening_from10to14));
+        } else if (Double.parseDouble(Build.VERSION.RELEASE.replaceAll("(\\d+[.]\\d+)(.*)","$1")) >= 14){
+            binding.informationAndrobso.setText(getResources().getString(R.string.Hardening_upto14));
+        }
+
         boolean devmod_enable = analyse.isDevMode(this.getContext().getContentResolver());
         binding.button.setText("dev mode is : "+ devmod_enable+"\n");
+        binding.button2.setText("adb mode is : " + analyse.isADB(this.getContext().getContentResolver())+"\n"); //necessite des tests !
+
+
         binding.imageButtonRes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
