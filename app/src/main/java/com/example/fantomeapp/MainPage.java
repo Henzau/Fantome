@@ -43,7 +43,10 @@ public class MainPage extends Fragment{
             container.removeAllViews();
         }
         binding = FragmentMainPageBinding.inflate(inflater, container, false);
+        String randomTip = SecurityTips.getRandomTip();
+        binding.tipsDemo.setText(randomTip);
         return binding.getRoot();
+
     }
 
     @Override
