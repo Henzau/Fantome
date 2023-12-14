@@ -47,6 +47,25 @@ public class analyse {
         }
     }
 
+    public static String isPhoneEncrypted() {
+        try {
+            Process p = Runtime.getRuntime().exec("getprop ro.crypto.state");
+            InputStream is = null;
+            if (p.waitFor() == 0) {
+                is = p.getInputStream();
+            } else {
+                is = p.getErrorStream();
+            }
+            BufferedReader br = new BufferedReader(new InputStreamReader(is),
+                    1000);
+            String line = br.readLine();
+            br.close();
+            return line;
+        } catch (Exception ex) {
+            return "ERROR: " + ex.getMessage();
+        }
+    }
+
     //est ce que le téléphone est en mode développeur ?
      public static boolean isDevMode(ContentResolver contentResolver) {
         if (Settings.Global.getInt(contentResolver, Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0) {
