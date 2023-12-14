@@ -41,13 +41,21 @@ public class ResAna extends Fragment {
 
     }
 
-    @Override
+
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         binding.androidVersion.setText("Android version : "+ analyse.currentVersion() +"\n");
         binding.kernelVersion.setText("Kernel version : "+analyse.readKernelVersion() +"\n");
+        binding.imageButtonRes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // The user just clicked
+                if (getActivity() instanceof MainActivity) {
+                    MainPage mainpage = MainPage.newInstance();
+                    ((MainActivity) getActivity()).replaceFragment(mainpage);
+                }
 
-
+            }
+        });
     }
 }
