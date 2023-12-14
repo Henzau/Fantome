@@ -2,6 +2,8 @@ package com.example.fantomeapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,8 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-public class InfoFrag extends Fragment {
+import com.example.fantomeapp.databinding.FragmentInfoBinding;
+import com.example.fantomeapp.databinding.FragmentMainPageBinding;
 
+public class InfoFrag extends Fragment {
+    FragmentInfoBinding binding;
     public InfoFrag() {
         // Required empty public constructor
     }
@@ -27,13 +32,30 @@ public class InfoFrag extends Fragment {
     }
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         if (container != null) {
             container.removeAllViews();
         }
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_info, container, false);
+        binding = FragmentInfoBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        binding.imageButtonInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // The user just clicked
+                if (getActivity() instanceof MainActivity) {
+                    MainPage mainpage = MainPage.newInstance();
+                    ((MainActivity) getActivity()).replaceFragment(mainpage);
+                }
+
+            }
+        });
+    }
+
 }

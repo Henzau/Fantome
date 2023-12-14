@@ -9,8 +9,9 @@
     <string name="Who">Qui sommes nous? \n Nous sommes 2 étudiants à l école ESIEA. Cette application est une partie de notre projet de fin d étude. L idée de ce projet est de fournir un état de l art de la sécurité sur Android, ainsi que de fournir des solutions permettant de durcir au maximum des Androids dégooglisés, opensources, et de maniere portable."</string>
     <string name="Why">Pourquoi cette application ?\n En 2021, plus d un milliard de smartphones Android ont été expédiés à travers le monde [source : servicesmobiles.fr]. Afin que chacun puisse avoir une idée du niveau de sécurité sur son Android, il est intéressant d avoir une application renseignant toutes ces informations au même endroit.</string>
     <string name="What">Que fait cette application ?\n Afin de fournir un état des lieux de la sécurité mise en place sur votre Android, cette application va effectuer différents scans fournissant à vous, utilisateur, un aperçus des vulnérabilités système de votre téléphone.</string>
+    <string name="When">Quand ?\n Cette application est toujours en cours de developpement et disponible à tous sur le lien suivant : https://github.com/Henzau/Fantome.</string>
     <string name="resanalyse">Résultats analyse</string>
-    <string name="android_version">Android version : </string>
+    <string name="android_version">Android version : 1 </string>
     <string name="kernel_version">Kernel version : </string>
     <string name="information_androbso">Votre téléphone a besoin d’être mis a jour ou est trop vieux opur recevoir les nouvelles</string>
     <string name="res_tmp1">Resultat analyse X</string>
