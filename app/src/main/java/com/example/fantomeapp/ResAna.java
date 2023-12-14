@@ -60,6 +60,7 @@ public class ResAna extends Fragment {
         binding.button.setText("dev mode is : "+ devmod_enable+"\n");
         binding.button2.setText("adb mode is : " + analyse.isADB(this.getContext().getContentResolver())+"\n"); //necessite des tests !
 
+        binding.button3.setText("phone encrypted ? : "+analyse.isPhoneEncrypted()+"\n");
 
         binding.imageButtonRes.setOnClickListener(new View.OnClickListener() {
             @Override
