@@ -49,5 +49,18 @@ public class ResAna extends Fragment {
         binding.kernelVersion.setText("Kernel version : "+analyse.readKernelVersion() +"\n");
 
 
+
+
+
+
+
+
+
+
+        
+        boolean devmod_enable = analyse.isDevMode(this.getContext().getContentResolver());
+        binding.button.setText("dev mode is : "+ devmod_enable+"\n");
+
     }
+
 }

@@ -1,7 +1,9 @@
 package com.example.fantomeapp;
 
 import android.os.Build;
-
+import android.provider.Settings;
+import android.content.ContentResolver;
+import android.provider.Settings;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -45,6 +47,13 @@ public class analyse {
         }
     }
 
+     public static boolean isDevMode(ContentResolver contentResolver) {
+        if (Settings.Global.getInt(contentResolver, Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
 }
