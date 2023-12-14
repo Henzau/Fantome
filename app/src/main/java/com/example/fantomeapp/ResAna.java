@@ -57,7 +57,7 @@ public class ResAna extends Fragment {
 
 
 
-        
+
         boolean devmod_enable = analyse.isDevMode(this.getContext().getContentResolver());
         binding.button.setText("dev mode is : "+ devmod_enable+"\n");
 
