@@ -13,11 +13,12 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.fantomeapp.databinding.FragmentMainPageBinding;
 
 
-public class MainPage extends Fragment {
+public class MainPage extends Fragment{
     private FragmentMainPageBinding binding;
 
 
@@ -25,7 +26,7 @@ public class MainPage extends Fragment {
         // Required empty public constructor
     }
 
-    public static MainPage newInstance(String param1, String param2) {
+    public static MainPage newInstance() {
         MainPage fragment = new MainPage();
         return fragment;
     }
@@ -52,26 +53,27 @@ public class MainPage extends Fragment {
             @Override
             public void onClick(View v) {
                 // The user just clicked
-                FragmentManager fragmentManager = getParentFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                ResAna resarena = ResAna.newInstance();
-                fragmentTransaction.add(R.id.fragment_container_view, resarena);
-                fragmentTransaction.commit();
+                if (getActivity() instanceof MainActivity) {
+                    ResAna resarena = ResAna.newInstance();
+                    ((MainActivity) getActivity()).replaceFragment(resarena);
+                }
+
             }
         });
 
         binding.imageButtonInfo.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                // The user just clicked
-                FragmentManager fragmentManager = getParentFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                InfoFrag infoFragment = InfoFrag.newInstance();
-                fragmentTransaction.add(R.id.fragment_container_view, infoFragment);
-                fragmentTransaction.commit();
+                if (getActivity() instanceof MainActivity) {
+                    InfoFrag infoFragment = InfoFrag.newInstance();
+
+                    ((MainActivity) getActivity()).replaceFragment(infoFragment);
+                }
+
             }
         });
 
 
     }
+
 }
