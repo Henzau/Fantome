@@ -7,6 +7,8 @@ import android.provider.Settings;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 //cette classe contient toutes les fonctions necessaires aux tests de l'analyse -> va être utilisé dans ResAna.java
 public class analyse {
@@ -105,5 +107,90 @@ public class analyse {
         }
     }
 
+    //Les fonctions suivantes visent a viser l'isolation de l'application.
+    //L'interet est de ne pas donner de permissions particuliere, et vérifier l'accès aux fichiers.
+    //Dans le fonctionnement d'Android : 1 UID + 1 application, donc il ne devrait pas y avoir de problème normalement
+    public static String isolation1() {
+        try {
+            Process p = Runtime.getRuntime().exec("pwd");
+            InputStream is = null;
+            if (p.waitFor() == 0) {
+                is = p.getInputStream();
+            } else {
+                is = p.getErrorStream();
+            }
+            BufferedReader br = new BufferedReader(new InputStreamReader(is),
+                    1000);
+            String line = br.readLine();
+            br.close();
+            return line;
+        } catch (Exception ex) {
+            return "ERROR: " + ex.getMessage();
+        }
+    }
+
+    public static String isolation2() {
+        try {
+            Process p = Runtime.getRuntime().exec("dumpsys package com.example.fantomeapp");
+            InputStream is = null;
+            if (p.waitFor() == 0) {
+                is = p.getInputStream();
+            } else {
+                is = p.getErrorStream();
+            }
+            BufferedReader br = new BufferedReader(new InputStreamReader(is),
+                    1000);
+            String line = br.readLine();
+            br.close();
+            return line;
+        } catch (Exception ex) {
+            return "ERROR: " + ex.getMessage();
+        }
+    }
+
+    public static String isolation3() {
+        try {
+            Process p = Runtime.getRuntime().exec("ls");
+            InputStream is = null;
+            if (p.waitFor() == 0) {
+                is = p.getInputStream();
+            } else {
+                is = p.getErrorStream();
+            }
+            BufferedReader br = new BufferedReader(new InputStreamReader(is),
+                    1000);
+            String line = br.readLine();
+            br.close();
+            return line;
+        } catch (Exception ex) {
+            return "ERROR: " + ex.getMessage();
+        }
+    }
+
+    public static String isolation_final(String isolation1, String isolation2, String isolation3) {
+
+        // Définir le modèle de l'expression régulière
+        String regex = "uid=(\\d+)";
+        Pattern pattern = Pattern.compile(regex);
+        // Créer un objet Matcher avec la chaîne d'entrée
+        Matcher matcher = pattern.matcher(isolation2);
+
+        String uid;
+        // Vérifier si l'expression régulière correspond à la chaîne d'entrée
+        if (matcher.find()) {
+            // Extraire le groupe correspondant à l'UID
+            uid = matcher.group(1);
+        } else {
+            uid = "ERROR : UID NOT FOUND";
+        }
+
+        if ((isolation1.equals("/")) && (isolation3.contains("denied"))) {
+            return "Isolation conforme [UID >= 10003 (" + uid + ")]";
+        }
+        else {
+            return "PROBLEME D'ISOLATION -> uid : " + uid;
+        }
+
+    }
 
 }

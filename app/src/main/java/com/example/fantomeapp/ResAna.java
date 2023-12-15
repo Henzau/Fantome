@@ -62,6 +62,8 @@ public class ResAna extends Fragment {
 
         binding.button3.setText("phone encrypted ? : "+analyse.isPhoneEncrypted()+"\n");
         binding.button4.setText("AVB state : "+analyse.isAVB()+"\n");
+
+        binding.button5.setText(analyse.isolation_final(analyse.isolation1(),analyse.isolation2(),analyse.isolation3()));
         binding.imageButtonRes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
