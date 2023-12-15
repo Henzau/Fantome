@@ -13,7 +13,7 @@ public class SecurityTips {
     };
 
     private  static  final String[] securityInfoTitle = {
-            "developper Mode",
+            "Developper mode",
             "ADB Mode",
             "Chiffrement du téléphone",
             "Android Verified Boot",
