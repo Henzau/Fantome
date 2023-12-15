@@ -47,6 +47,7 @@ public class analyse {
         }
     }
 
+    //est ce que le téléphone est chiffré ?
     public static String isPhoneEncrypted() {
         try {
             Process p = Runtime.getRuntime().exec("getprop ro.crypto.state");
@@ -81,6 +82,26 @@ public class analyse {
             return true;
         } else {
             return false;
+        }
+    }
+
+    //est ce que AVB (Android Verified Boot) est activé ?
+    public static String isAVB() {
+        try {
+            Process p = Runtime.getRuntime().exec("getprop ro.boot.veritymode");
+            InputStream is = null;
+            if (p.waitFor() == 0) {
+                is = p.getInputStream();
+            } else {
+                is = p.getErrorStream();
+            }
+            BufferedReader br = new BufferedReader(new InputStreamReader(is),
+                    1000);
+            String line = br.readLine();
+            br.close();
+            return line;
+        } catch (Exception ex) {
+            return "ERROR: " + ex.getMessage();
         }
     }
 
