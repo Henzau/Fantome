@@ -57,7 +57,7 @@ public class ResAna extends Fragment {
         }
 
         boolean devmod_enable = analyse.isDevMode(this.getContext().getContentResolver());
-        binding.button.setText("dev mode is : "+ devmod_enable+"\n");
+        binding.button1.setText("dev mode is : "+ devmod_enable+"\n");
         binding.button2.setText("adb mode is : " + analyse.isADB(this.getContext().getContentResolver())+"\n"); //necessite des tests !
 
         binding.button3.setText("phone encrypted ? : "+analyse.isPhoneEncrypted()+"\n");
@@ -69,6 +69,58 @@ public class ResAna extends Fragment {
                 if (getActivity() instanceof MainActivity) {
                     MainPage mainpage = MainPage.newInstance();
                     ((MainActivity) getActivity()).replaceFragment(mainpage);
+                }
+            }
+        });
+
+        // Affichage des pop-up
+        binding.button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // The user just clicked
+                if (getActivity() instanceof MainActivity) {
+                    MainPage mainpage = MainPage.newInstance();
+                    ((MainActivity) getActivity()).showDialog(binding.button1,0);
+                }
+            }
+        });
+        binding.button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // The user just clicked
+                if (getActivity() instanceof MainActivity) {
+                    MainPage mainpage = MainPage.newInstance();
+                    ((MainActivity) getActivity()).showDialog(binding.button2,1);
+                }
+            }
+        });
+        binding.button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // The user just clicked
+                if (getActivity() instanceof MainActivity) {
+                    MainPage mainpage = MainPage.newInstance();
+                    ((MainActivity) getActivity()).showDialog(binding.button3,2);
+                }
+            }
+        });
+        binding.button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // The user just clicked
+                if (getActivity() instanceof MainActivity) {
+                    MainPage mainpage = MainPage.newInstance();
+                    ((MainActivity) getActivity()).showDialog(binding.button4,3);
+                }
+            }
+        });
+        binding.button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // The user just clicked
+                if (getActivity() instanceof MainActivity) {
+                    MainPage mainpage = MainPage.newInstance();
+                    ((MainActivity) getActivity()).showDialog(binding.button5,4);
                 }
             }
         });

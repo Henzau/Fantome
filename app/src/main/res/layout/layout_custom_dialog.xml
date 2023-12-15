@@ -40,12 +40,12 @@
                 android:layout_marginTop="12dp"/>
 
             <TextView
-                android:id="@+id/txttite"
+                android:id="@+id/txttitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Custom Dialog Title"
-                android:textColor="@color/black"
+                android:text="@string/secuTitle"
+                android:textColor="@color/colorBlacky"
                 android:textSize="20sp" />
 
             <TextView
@@ -54,23 +54,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
-                android:text="Although this is a demo project, And this project is all about the customization of a Dialog Box. We can design whatever we want!"
-                android:textColor="@color/black"
+                android:text="@string/secuDescription"
+                android:textColor="@color/colorBlacky"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"/>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_horizontal"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="12dp">
 
-
-
-            </LinearLayout>
 
         </LinearLayout>
     </RelativeLayout>

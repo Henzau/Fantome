@@ -3,5 +3,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lila">#D1ADFF</color>
+    <color name="lila_light">#E1BDFF</color>
+    <color name="lila_dark">#C19DDD</color>
     <color name="orange">#F5B049</color>
+    <color name="colorAccent">#04CE9B</color>
+    <color name="colorBlacky">#3A3A3A</color>
+    <color name="color_Blue_Light">#20EFFE</color>
+    <color name="colorGrayText">#C3C4C8</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
 </resources>

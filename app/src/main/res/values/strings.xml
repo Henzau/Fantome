@@ -18,4 +18,7 @@
     <string name="Hardening_to10">Votre téléphone ne possède pas la derniere mise a jour Android. En dessous de Android 10, beaucoup de vulnérabilités ne sont pas patchées. Veuillez mettre à jour si possible.</string>
     <string name="Hardening_from10to14">Votre téléphone ne possède pas la derniere mise a jour Android. Entre Android 10 et 14, certaines vulnérabilités ne sont pas patchées. Veuillez mettre à jour si possible.</string>
     <string name="Hardening_upto14">Votre téléphone est à jour (scan effectué depuis des informations de janvier 2024).</string>
+    <string name="secuTitle">Titre</string>
+    <string name="secuDescription">Ceci est une description du composant de sécurité.</string>
+    <string name="descreturn">Go to information fragment</string>
 </resources>

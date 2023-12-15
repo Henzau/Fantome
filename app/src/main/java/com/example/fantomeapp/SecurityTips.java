@@ -12,9 +12,31 @@ public class SecurityTips {
             "Évitez le plus possible de vous connecter à un WiFi public"
     };
 
+    private  static  final String[] securityInfoTitle = {
+            "developper Mode",
+            "ADB Mode",
+            "Chiffrement du téléphone",
+            "Android Verified Boot",
+            "Isolation"
+    };
+
+    private  static  final String[] securityInfoDesc = {
+            "Le mode déveleppeur du téléphone permet aux developper d'utiliser des fonctionnabilités non accessible pour les utilisateurs du quotidien, il est recommandé de désactiver ce mode si vous ne l'utilisez pas",
+            "ADB ou Android Debug Bridge permet de faire le lien entre votre téléphone et un terminal externe pour effectuer des communications ou executer des lignes de commandes sur le téléphone",
+            "Si le chiffrement du téléphone est activé, il est pratiquement impossible pour un voleur de récupérer les informations présentes sur le téléphone",
+            "Si AVB est présent alors la chaine de démarrage de votre téléphone est sécurisé ",
+            "Si l'isolation est activé il est impossible pour une application de communiquer sans droits avec des éléments externes à l'application."
+    };
+
     public static String getRandomTip() {
         Random random = new Random();
         int randomIndex = random.nextInt(securityTips.length);
         return securityTips[randomIndex];
+    }
+
+    public static String getTitle(int i) {
+        return securityInfoTitle[i];
+    }public static String getDesc(int i) {
+        return securityInfoDesc[i];
     }
 }

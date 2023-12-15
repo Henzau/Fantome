@@ -5,18 +5,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResAna">
+    tools:context=".ResAna"
+    android:background="@color/lila">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/lila_dark">
 
         <ImageButton
             android:id="@+id/imageButton_res"
-            android:contentDescription="Go to information fragment"
+            android:contentDescription="@string/descreturn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
+            android:background="@color/lila_dark"
+            android:layout_gravity="center"
             app:srcCompat="@android:drawable/ic_menu_revert" />
         <TextView
             android:id="@+id/application_version"
@@ -24,20 +28,22 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="1"
+            android:background="@color/lila_dark"
+            android:textColor="@color/black"
             android:text="@string/app_version" />
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/resanalyse"
-        android:layout_marginTop="20dp"
-        android:paddingVertical="1dp"
-        android:paddingHorizontal="1dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/lila_dark"
         android:gravity="center"
-        android:textSize="45sp"
+        android:paddingHorizontal="1dp"
+        android:paddingVertical="1dp"
+        android:text="@string/resanalyse"
         android:textColor="@color/black"
-        android:background="#FFFFFF"/>
+        android:textSize="45sp" />
 
     <TextView
         android:id="@+id/android_version"
@@ -46,7 +52,7 @@
         android:layout_marginTop="30dp"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:background="@color/orange"
+        android:background="@color/lila"
         android:gravity="center"
         android:text="@string/android_version" />
 
@@ -56,7 +62,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:background="@color/orange"
+        android:background="@color/lila"
         android:gravity="center"
         android:text="@string/kernel_version" />
 
@@ -64,17 +70,20 @@
         android:id="@+id/information_androbso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:background="@color/orange"
         android:layout_marginBottom="40dp"
+        android:background="@color/lila"
         android:gravity="center"
-        android:text="@string/information_androbso" />
+        android:text="@string/information_androbso"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@color/lila_light"
+        android:padding="5dp">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,7 +91,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/button1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/res_tmp1" />
