@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ResAna"
-    android:background="@color/lila">
+    android:background="@color/thulian_pink">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="@color/lila_dark"
+            android:background="@color/ultra_violet"
             android:layout_gravity="center"
             app:srcCompat="@android:drawable/ic_menu_revert" />
         <TextView
@@ -28,8 +28,8 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="1"
-            android:background="@color/lila_dark"
-            android:textColor="@color/black"
+            android:background="@color/ultra_violet"
+            android:textColor="@color/white"
             android:text="@string/app_version" />
     </LinearLayout>
 
@@ -37,12 +37,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        android:background="@color/lila_dark"
+        android:background="@color/ultra_violet"
         android:gravity="center"
         android:paddingHorizontal="1dp"
         android:paddingVertical="1dp"
         android:text="@string/resanalyse"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="45sp" />
 
     <TextView
@@ -52,7 +52,7 @@
         android:layout_marginTop="30dp"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:background="@color/lila"
+        android:background="@color/thulian_pink"
         android:gravity="center"
         android:text="@string/android_version" />
 
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:background="@color/lila"
+        android:background="@color/thulian_pink"
         android:gravity="center"
         android:text="@string/kernel_version" />
 
@@ -71,10 +71,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:background="@color/lila"
+        android:background="@color/thulian_pink"
         android:gravity="center"
         android:text="@string/information_androbso"
         android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="16sp" />
 
     <ScrollView

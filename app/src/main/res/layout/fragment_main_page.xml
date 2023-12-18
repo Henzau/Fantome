@@ -9,7 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/ultra_violet">
 
 
         <ImageButton
@@ -17,6 +18,7 @@
             android:contentDescription="Go to information fragment"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:background="@color/ultra_violet"
             android:layout_weight="1"
             android:src="@android:drawable/ic_dialog_info" />
 
@@ -25,6 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:textColor="@color/white"
             android:layout_weight="1"
             android:text="@string/app_version" />
 
@@ -34,6 +37,8 @@
         android:id="@+id/nomapplication"
         android:text="@string/nomapplication"
         android:gravity="center"
+        android:textColor="@color/thulian_pink"
+        android:textStyle="bold"
         android:textSize="50dp"
         android:layout_margin="70dp"
         android:layout_width="match_parent"
@@ -44,7 +49,7 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:textSize="30dp"
-        android:backgroundTint="@color/lila"
+        android:backgroundTint="@color/ultra_violet"
         android:layout_margin="30dp"
         android:layout_height="200dp"
         android:text="@string/button_lancer" />
@@ -52,11 +57,12 @@
     <TextView
         android:id="@+id/tips_demo"
         android:gravity="center"
-        android:background="@color/orange"
+        android:background="@color/thulian_pink"
         android:layout_width="match_parent"
         android:layout_marginTop="60dp"
         android:layout_height="match_parent"
         android:textSize="25sp"
+        android:textColor="@color/black"
         android:text="@string/tips_demo" />
 
 </LinearLayout>

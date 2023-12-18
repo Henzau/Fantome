@@ -4,12 +4,16 @@ import java.util.Random;
 
 public class SecurityTips {
     private static final String[] securityTips = {
-            "Ne pas donner les permissions quand on ne connaît pas",
+            "N'installez pas des applications en dehors de F-Droid ou autre catalogue sécurisé d'application",
             "Mettez à jour vos équipements, autant qu'ils le peuvent",
             "Évitez de connecter des câbles inconnus sur votre téléphone",
-            "Ne donner uniquement que les permissions requises et cohérentes pour faire fonctionner l'application",
+            "Ne donner uniquement que les permissions requises et cohérentes pour faire fonctionner une application",
             "Ne faites d'opérations délicates sur un WiFi public",
-            "Évitez le plus possible de vous connecter à un WiFi public"
+            "Évitez le plus possible de vous connecter à un WiFi public",
+            "Éteignez ou redémarrez votre téléphone au moins une fois par mois",
+            "Utilisez de la double authentification quand vous le pouvez",
+            "Utilisez des mots de passe robustes",
+            "Privilégiez la 4G et 5G, mais n'enlevez pas la 2G ! Cela est plus sécurisé au quotidient, mais peut-être utile pour les appels d'urgences."
     };
 
     private  static  final String[] securityInfoTitle = {

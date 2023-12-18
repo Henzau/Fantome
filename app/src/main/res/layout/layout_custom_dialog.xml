@@ -45,7 +45,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/secuTitle"
-                android:textColor="@color/colorBlacky"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:textSize="20sp" />
 
             <TextView
@@ -55,12 +56,9 @@
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
                 android:text="@string/secuDescription"
-                android:textColor="@color/colorBlacky"
+                android:textColor="@color/white"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"/>
-
-
-
 
         </LinearLayout>
     </RelativeLayout>

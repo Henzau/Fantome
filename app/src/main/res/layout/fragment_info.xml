@@ -11,15 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:background="@color/lila_dark">
+        android:background="@color/ultra_violet">
 
         <ImageButton
             android:id="@+id/imageButton_info"
             android:contentDescription="Go to information fragment"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:layout_weight="5"
-            android:background="@color/lila_dark"
+            android:layout_weight="1"
+            android:background="@color/ultra_violet"
             android:layout_gravity="center"
             app:srcCompat="@android:drawable/ic_menu_revert" />
         <TextView
@@ -28,8 +28,8 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="1"
-            android:background="@color/lila_dark"
-            android:textColor="@color/black"
+            android:background="@color/ultra_violet"
+            android:textColor="@color/white"
             android:text="@string/app_version" />
     </LinearLayout>
 
@@ -37,12 +37,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        android:background="@color/lila_dark"
+        android:background="@color/ultra_violet"
         android:gravity="center"
         android:paddingHorizontal="1dp"
         android:paddingVertical="1dp"
-        android:text="@string/resanalyse"
-        android:textColor="@color/black"
+        android:text="Informations"
+        android:textColor="@color/white"
         android:textSize="45sp" />
 
 
@@ -65,7 +65,7 @@
                 android:paddingHorizontal="1dp"
                 android:textSize="16sp"
                 android:textColor="@color/black"
-                android:background="@color/orange"
+                android:background="@color/thulian_pink"
                 android:gravity="center"
                 android:text="@string/What" />
 
@@ -78,7 +78,7 @@
                 android:paddingHorizontal="5dp"
                 android:textSize="16sp"
                 android:textColor="@color/black"
-                android:background="@color/orange"
+                android:background="@color/thulian_pink"
                 android:gravity="center"
                 android:text="@string/Why" />
 
@@ -91,7 +91,7 @@
                 android:paddingHorizontal="5dp"
                 android:textSize="16sp"
                 android:textColor="@color/black"
-                android:background="@color/orange"
+                android:background="@color/thulian_pink"
                 android:gravity="center"
                 android:text="@string/Who" />
             <TextView
@@ -103,7 +103,7 @@
                 android:paddingHorizontal="5dp"
                 android:textSize="16sp"
                 android:textColor="@color/black"
-                android:background="@color/orange"
+                android:background="@color/thulian_pink"
                 android:gravity="center"
                 android:text="@string/When" />
         </LinearLayout>
