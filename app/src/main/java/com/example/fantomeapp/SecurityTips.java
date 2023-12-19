@@ -21,7 +21,9 @@ public class SecurityTips {
             "ADB Mode",
             "Chiffrement du téléphone",
             "Android Verified Boot",
-            "Isolation"
+            "Isolation",
+            "Strong Box",
+            "Hardware/Software Key"
     };
 
     private  static  final String[] securityInfoDesc = {
@@ -29,7 +31,9 @@ public class SecurityTips {
             "ADB ou Android Debug Bridge permet de faire le lien entre votre téléphone et un terminal externe pour effectuer des communications ou executer des lignes de commandes sur le téléphone",
             "Si le chiffrement du téléphone est activé, il est pratiquement impossible pour un voleur de récupérer les informations présentes sur le téléphone",
             "Si AVB est présent alors la chaine de démarrage de votre téléphone est sécurisé ",
-            "Si l'isolation est activé il est impossible pour une application de communiquer sans droits avec des éléments externes à l'application."
+            "Si l'isolation est activé il est impossible pour une application de communiquer sans droits avec des éléments externes à l'application.",
+            "StrongBox est une fonctionnalité de sécurité d'Android utilisant un matériel dédié pour renforcer la protection des clés cryptographiques.",
+            "Si le résultat est : Dans une sécurité hardware, cela signifie que les clés sont sauvegardées dans un environnement physique et donc plus sécurisé qu'un environnement logiciel."
     };
 
     public static String getRandomTip() {

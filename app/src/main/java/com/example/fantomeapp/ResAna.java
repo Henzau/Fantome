@@ -74,6 +74,17 @@ public class ResAna extends Fragment {
                 }
             }
         });
+        
+        String[] Keysecu = analyse.isInsideSecureHardware();
+        binding.button6.setText(Keysecu[0]);
+        binding.button7.setText(Keysecu[1]);
+
+
+
+
+
+
+
 
         // Affichage des pop-up
         binding.button1.setOnClickListener(new View.OnClickListener() {
@@ -126,6 +137,28 @@ public class ResAna extends Fragment {
                 }
             }
         });
+        binding.button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // The user just clicked
+                if (getActivity() instanceof MainActivity) {
+                    MainPage mainpage = MainPage.newInstance();
+                    ((MainActivity) getActivity()).showDialog(binding.button6,5);
+                }
+            }
+        });
+        binding.button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // The user just clicked
+                if (getActivity() instanceof MainActivity) {
+                    MainPage mainpage = MainPage.newInstance();
+                    ((MainActivity) getActivity()).showDialog(binding.button7,6);
+                }
+            }
+        });
+
+
 
     }
 

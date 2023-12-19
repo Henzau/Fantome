@@ -3,15 +3,30 @@ package com.example.fantomeapp;
 import android.os.Build;
 import android.provider.Settings;
 import android.content.ContentResolver;
-import android.provider.Settings;
+import android.security.keystore.KeyGenParameterSpec;
+import android.security.keystore.KeyInfo;
+import android.security.keystore.KeyProperties;
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.security.KeyStore;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
+
 //cette classe contient toutes les fonctions necessaires aux tests de l'analyse -> va être utilisé dans ResAna.java
 public class analyse {
+
+    private static final String KEYSTORE_PROVIDER = "AndroidKeyStore";
+    private static final String KEY_NAME = "your_key_name"; // Specify a key name
+
+    public analyse() {
+    }
 
     //version de l'OS Android
     public static String currentVersion(){
@@ -193,4 +208,79 @@ public class analyse {
 
     }
 
+
+
+    public static String createKeyForTimeout() {
+        try {
+            KeyStore ks = KeyStore.getInstance(KEYSTORE_PROVIDER);
+            ks.load(null, null); // null InputStream and null password for loading the default keystore
+
+            KeyGenerator keyGenerator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, KEYSTORE_PROVIDER);
+
+            KeyGenParameterSpec.Builder keyGenParameterSpecBuilder = new KeyGenParameterSpec.Builder(
+                    KEY_NAME,
+                    KeyProperties.PURPOSE_ENCRYPT | KeyProperties.PURPOSE_DECRYPT)
+                    .setBlockModes(KeyProperties.BLOCK_MODE_CBC)
+                    .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_PKCS7)
+                    .setRandomizedEncryptionRequired(false); // Adjust as needed
+            boolean strongbox = true;
+            if (Build.VERSION.SDK_INT >= 28) {
+                try {
+                    keyGenParameterSpecBuilder.setIsStrongBoxBacked(true);
+                } catch (NoSuchMethodError e) {
+                    // Handle the case where setIsStrongBoxBacked is not available
+                    e.printStackTrace();
+                    return "Error setting StrongBox feature";
+                }
+            }
+            else{
+                strongbox=false;
+            }
+            keyGenerator.init(keyGenParameterSpecBuilder.build());
+            keyGenerator.generateKey();
+
+            if(strongbox) {
+                return "Possiblement une StrongBox";
+            }
+            else{
+                return "Pas de StrongBox";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e(analyse.class.getSimpleName(), "Exception creating key", e);
+            return "Exception creating key: " + e.getMessage();
+        }
+    }
+
+    public static String[] isInsideSecureHardware() {
+        String[] values = new String[2];
+        try {
+            values[0] = createKeyForTimeout();
+        } catch (Exception e) {
+            Log.e(analyse.class.getSimpleName(), "Exception creating key", e);
+            values[1] = "Exception creating key: " + e.getMessage();
+            return values;
+        }
+
+        try {
+            KeyStore ks = KeyStore.getInstance(KEYSTORE_PROVIDER);
+            ks.load(null, null);
+
+            SecretKey key = (SecretKey) ks.getKey(KEY_NAME, null);
+            KeyInfo info = (KeyInfo) SecretKeyFactory.getInstance(key.getAlgorithm(), KEYSTORE_PROVIDER)
+                    .getKeySpec(key, KeyInfo.class);
+
+            if (info.isInsideSecureHardware()) {
+                values[1] = "Sécurité hardware";
+                return values;
+            } else {
+                values[1] = "Sécurité software";
+                return values;
+            }
+        } catch (Exception e) {
+            values[1]="Error getting key info: " + e.getMessage();
+            return values;
+        }
+    }
 }
+
