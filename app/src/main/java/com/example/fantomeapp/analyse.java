@@ -282,5 +282,25 @@ public class analyse {
             return values;
         }
     }
+    
+    public static String LastSecurityPatch() {
+        try {
+            Process p = Runtime.getRuntime().exec("getprop ro.build.version.security_patch");
+            InputStream is = null;
+            if (p.waitFor() == 0) {
+                is = p.getInputStream();
+            } else {
+                is = p.getErrorStream();
+            }
+            BufferedReader br = new BufferedReader(new InputStreamReader(is),
+                    1000);
+            String line = br.readLine();
+            br.close();
+            return line;
+        } catch (Exception ex) {
+            return "ERROR: " + ex.getMessage();
+        }
+    }
+
 }
 
