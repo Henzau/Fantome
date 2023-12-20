@@ -78,7 +78,7 @@ public class ResAna extends Fragment {
         String[] Keysecu = analyse.isInsideSecureHardware();
         binding.button6.setText(Keysecu[0]);
         binding.button7.setText(Keysecu[1]);
-
+        binding.button8.setText("Last Security Patch : " + analyse.LastSecurityPatch()+"\n");
 
 
 
@@ -154,6 +154,17 @@ public class ResAna extends Fragment {
                 if (getActivity() instanceof MainActivity) {
                     MainPage mainpage = MainPage.newInstance();
                     ((MainActivity) getActivity()).showDialog(binding.button7,6);
+                }
+            }
+        });
+
+        binding.button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // The user just clicked
+                if (getActivity() instanceof MainActivity) {
+                    MainPage mainpage = MainPage.newInstance();
+                    ((MainActivity) getActivity()).showDialog(binding.button8,7);
                 }
             }
         });

@@ -13,7 +13,8 @@ public class SecurityTips {
             "Éteignez ou redémarrez votre téléphone au moins une fois par mois",
             "Utilisez de la double authentification quand vous le pouvez",
             "Utilisez des mots de passe robustes",
-            "Privilégiez la 4G et 5G, mais n'enlevez pas la 2G ! Cela est plus sécurisé au quotidient, mais peut-être utile pour les appels d'urgences."
+            "Privilégiez la 4G et 5G, mais n'enlevez pas la 2G ! Cela est plus sécurisé au quotidient, mais peut-être utile pour les appels d'urgences.",
+            "N'activez le Bluetooth si vous ne l'utilisez pas"
     };
 
     private  static  final String[] securityInfoTitle = {
@@ -23,7 +24,8 @@ public class SecurityTips {
             "Android Verified Boot",
             "Isolation",
             "Strong Box",
-            "Hardware/Software Key"
+            "Hardware/Software Key",
+            "Last Security Patch"
     };
 
     private  static  final String[] securityInfoDesc = {
@@ -33,7 +35,8 @@ public class SecurityTips {
             "Si AVB est présent alors la chaine de démarrage de votre téléphone est sécurisé ",
             "Si l'isolation est activé il est impossible pour une application de communiquer sans droits avec des éléments externes à l'application.",
             "StrongBox est une fonctionnalité de sécurité d'Android utilisant un matériel dédié pour renforcer la protection des clés cryptographiques.",
-            "Si le résultat est : Dans une sécurité hardware, cela signifie que les clés sont sauvegardées dans un environnement physique et donc plus sécurisé qu'un environnement logiciel."
+            "Si le résultat est : Dans une sécurité hardware, cela signifie que les clés sont sauvegardées dans un environnement physique et donc plus sécurisé qu'un environnement logiciel.",
+            "La date indiquée est la date de la derniere installation de patch de sécurité Android"
     };
 
     public static String getRandomTip() {
