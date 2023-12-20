@@ -223,34 +223,42 @@ public class analyse {
                     .setBlockModes(KeyProperties.BLOCK_MODE_CBC)
                     .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_PKCS7)
                     .setRandomizedEncryptionRequired(false); // Adjust as needed
-            boolean strongbox = true;
+
+            boolean boxbox = true;
+            // Utilisation de la réflexion pour vérifier la présence de la méthode setIsStrongBoxBacked
             if (Build.VERSION.SDK_INT >= 28) {
                 try {
+                    Class<?> keyGenParameterSpecClass = Class.forName("android.security.keystore.KeyGenParameterSpec");
+                    keyGenParameterSpecClass.getMethod("setIsStrongBoxBacked", boolean.class);
+
+                    // Si la méthode est présente, alors on peut l'utiliser
                     keyGenParameterSpecBuilder.setIsStrongBoxBacked(true);
-                } catch (NoSuchMethodError e) {
+                } catch (Exception e) {
                     // Handle the case where setIsStrongBoxBacked is not available
                     e.printStackTrace();
-                    return "Error setting StrongBox feature";
+                    return "Pas de Strongbox";
                 }
             }
             else{
-                strongbox=false;
+                boxbox = false;
             }
+
             keyGenerator.init(keyGenParameterSpecBuilder.build());
             keyGenerator.generateKey();
-
-            if(strongbox) {
-                return "Possiblement une StrongBox";
+            if(boxbox){
+                return"StrongBox présente";
             }
             else{
-                return "Pas de StrongBox";
+                return "Pas de Strongbox";
             }
+
         } catch (Exception e) {
             e.printStackTrace();
             Log.e(analyse.class.getSimpleName(), "Exception creating key", e);
             return "Exception creating key: " + e.getMessage();
         }
     }
+
 
     public static String[] isInsideSecureHardware() {
         String[] values = new String[2];

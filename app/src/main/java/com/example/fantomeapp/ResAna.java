@@ -74,7 +74,7 @@ public class ResAna extends Fragment {
                 }
             }
         });
-        
+
         String[] Keysecu = analyse.isInsideSecureHardware();
         binding.button6.setText(Keysecu[0]);
         binding.button7.setText(Keysecu[1]);
