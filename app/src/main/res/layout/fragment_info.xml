@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:background="@color/ultra_violet">
+        android:background="@color/vert_logo">
 
         <ImageButton
             android:id="@+id/imageButton_info"
@@ -19,31 +19,34 @@
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="@color/ultra_violet"
+            android:background="@color/vert_logo"
             android:layout_gravity="center"
             app:srcCompat="@android:drawable/ic_menu_revert" />
+
         <TextView
             android:id="@+id/application_version"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:layout_weight="1"
-            android:background="@color/ultra_violet"
+            android:background="@color/vert_logo"
+            android:gravity="center"
+            android:text="@string/app_version"
             android:textColor="@color/white"
-            android:text="@string/app_version" />
+            tools:ignore="TextContrastCheck" />
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        android:background="@color/ultra_violet"
+        android:background="@color/vert_logo"
         android:gravity="center"
         android:paddingHorizontal="1dp"
         android:paddingVertical="1dp"
         android:text="Informations"
         android:textColor="@color/white"
-        android:textSize="45sp" />
+        android:textSize="45sp"
+        tools:ignore="TextContrastCheck" />
 
 
     <ScrollView
@@ -65,7 +68,7 @@
                 android:paddingHorizontal="1dp"
                 android:textSize="16sp"
                 android:textColor="@color/black"
-                android:background="@color/thulian_pink"
+                android:background="@color/jaune_logo"
                 android:gravity="center"
                 android:text="@string/What" />
 
@@ -78,7 +81,7 @@
                 android:paddingHorizontal="5dp"
                 android:textSize="16sp"
                 android:textColor="@color/black"
-                android:background="@color/thulian_pink"
+                android:background="@color/jaune_logo"
                 android:gravity="center"
                 android:text="@string/Why" />
 
@@ -91,7 +94,7 @@
                 android:paddingHorizontal="5dp"
                 android:textSize="16sp"
                 android:textColor="@color/black"
-                android:background="@color/thulian_pink"
+                android:background="@color/jaune_logo"
                 android:gravity="center"
                 android:text="@string/Who" />
             <TextView
@@ -103,7 +106,7 @@
                 android:paddingHorizontal="5dp"
                 android:textSize="16sp"
                 android:textColor="@color/black"
-                android:background="@color/thulian_pink"
+                android:background="@color/jaune_logo"
                 android:gravity="center"
                 android:text="@string/When" />
         </LinearLayout>
