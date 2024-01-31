@@ -17,4 +17,8 @@
     <color name="vert_logo">#a4c639</color>
     <color name="jaune_logo">#ffda59</color>
     <color name="transi_logo">#DFD5E1AF</color>
+    <color name="good">#00FF00</color>
+    <color name="not_good">#FF5733</color>
+
+
 </resources>
