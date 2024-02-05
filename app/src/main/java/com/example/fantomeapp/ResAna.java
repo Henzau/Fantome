@@ -119,7 +119,7 @@ public class ResAna extends Fragment {
             binding.button6.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.not_good));
         }
         if(!value_button7){
-            binding.button6.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.not_good));
+            binding.button7.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.not_good));
         }
 
 

@@ -15,7 +15,7 @@ import com.example.fantomeapp.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    private static final int SPLASH_DURATION = 13000; // Durée de l'animation de démarrage en millisecondes
+    private static final int SPLASH_DURATION = 10000; // Durée de l'animation de démarrage en millisecondes
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
