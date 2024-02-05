@@ -31,7 +31,7 @@ public class analyse {
     //version de l'OS Android
     public static String currentVersion(){
         double release=Double.parseDouble(Build.VERSION.RELEASE.replaceAll("(\\d+[.]\\d+)(.*)","$1"));
-        String codeName="Unsupported";//below Jelly Bean
+        String codeName="Pas supporté";//below Jelly Bean
         if(release >= 4.1 && release < 4.4) codeName = "Jelly Bean";
         else if(release < 5)   codeName="Kit Kat";
         else if(release < 6)   codeName="Lollipop";
@@ -196,7 +196,7 @@ public class analyse {
             // Extraire le groupe correspondant à l'UID
             uid = matcher.group(1);
         } else {
-            uid = "ERROR : UID NOT FOUND";
+            uid = "ERREUR : UID INCONNU";
         }
 
         if ((isolation1.equals("/")) && (isolation3.contains("denied"))) {
@@ -286,7 +286,7 @@ public class analyse {
                 return values;
             }
         } catch (Exception e) {
-            values[1]="Error getting key info: " + e.getMessage();
+            values[1]="Erreur de récupération des informations sur la clé: " + e.getMessage();
             return values;
         }
     }
@@ -306,7 +306,7 @@ public class analyse {
             br.close();
             return line;
         } catch (Exception ex) {
-            return "ERROR: " + ex.getMessage();
+            return "ERREUR: " + ex.getMessage();
         }
     }
 

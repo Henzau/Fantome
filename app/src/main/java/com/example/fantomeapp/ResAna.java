@@ -74,12 +74,12 @@ public class ResAna extends Fragment {
         boolean value_button7 = Objects.equals(res_button7,"Sécurité hardware");
         String value_button8 = analyse.LastSecurityPatch();
 
-        binding.button1.setText("dev mode is : "+ value_button1+"\n");
+        binding.button1.setText("Mode développeur : "+ value_button1+"\n");
 
-        binding.button2.setText("adb mode is : " + value_button2+"\n"); //necessite des tests !
+        binding.button2.setText("Mode ADB : " + value_button2+"\n"); //necessite des tests !
 
-        binding.button3.setText("phone encrypted ? : "+value_button3+"\n");
-        binding.button4.setText("AVB state : "+res_button4+"\n");
+        binding.button3.setText("Téléphone chiffré ? : "+value_button3+"\n");
+        binding.button4.setText("Etat AVB : "+res_button4+"\n");
 
         binding.button5.setText(res_button5);
         binding.imageButtonRes.setOnClickListener(new View.OnClickListener() {
@@ -95,7 +95,7 @@ public class ResAna extends Fragment {
 
         binding.button6.setText(res_button6);
         binding.button7.setText(res_button7);
-        binding.button8.setText("Last Security Patch : " + value_button8+"\n");
+        binding.button8.setText("Dernier patch de sécurité : " + value_button8+"\n");
 
 
         //Affichage des boutons de la bonne couleur.
